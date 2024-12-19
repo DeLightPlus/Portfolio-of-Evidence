@@ -1,0 +1,30 @@
+.circle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left:0;
+
+    border-radius: 50%;
+    background: rgb(100, 50, 3);
+    mix-blend-mode: difference;   
+    
+  
+    /* Smooth Animation */
+    transition: transform 0.1s ease-out, left 0.075s ease, top 0.075s ease;
+    will-change: transform, left, top;
+  }
+
+  /* Main Circle for Inverse Effect */
+.main-circle 
+{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: white;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: transform 0.75s ease-out, left 0.075s ease, top 0.075s ease;
+    will-change: left, top, transform;
+}

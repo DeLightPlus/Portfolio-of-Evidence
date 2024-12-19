@@ -1,0 +1,64 @@
+/* src/RotatingCircles.css */
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+    position: relative;
+  }
+  
+  .circle {
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.8;
+    border: 3px solid #000;
+    animation-timing-function: linear;
+  }
+  
+  .circle-outer {
+    width: 300px;
+    height: 300px;
+    animation: rotateOuter 10s infinite;
+  }
+  
+  .circle-middle {
+    width: 200px;
+    height: 200px;
+    animation: rotateMiddle 15s infinite reverse;
+  }
+  
+  .circle-inner {
+    width: 100px;
+    height: 100px;
+    animation: rotateInner 20s infinite;
+    background-color: #4caf50; /* Color for the inner circle */
+  }
+  
+  @keyframes rotateOuter {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotateMiddle {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  @keyframes rotateInner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

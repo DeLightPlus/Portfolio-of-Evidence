@@ -1,0 +1,6 @@
+<div class="intro-section">
+  <h2>About De-Light-Plus Chat</h2>
+  <p>De-Light-Plus (DLP) Chat is your friendly assistant, here to guide you through the portfolio. It helps you explore sections, learn about my projects, and answer any questions you have along the way.</p>
+  <p>Just type your questions or commands, and DLP will provide the information you need in a conversational style. Let's get started!</p>
+  <button onclick="startChat()">Start Chat</button>
+</div>
