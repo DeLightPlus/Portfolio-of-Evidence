@@ -1,9 +1,9 @@
 import React from 'react';
 import './RotatingCircles.css';
 
-const RotatingCircles = () => {
+const RotatingCircles = ({onEduPage}) => {
   return (
-    <div className="atom-container">
+    <div className={`atom-container ${onEduPage ? "onEduPage": ""}`}>
 
       <div className="proton"></div>
       {/* Outer Orbit */}

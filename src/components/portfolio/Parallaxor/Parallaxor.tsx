@@ -1,5 +1,5 @@
-
-import React from 'react';
+import "./Parallaxor.css";
+import React, { useEffect, useRef, useState } from 'react';
 import SymbolCircle from '../../particles/SymbolCircle';
 import RotatingCircles from '../../particles/RotatingCircles';
 
@@ -12,13 +12,30 @@ import Projects from '../Projects/Projects';
 import Contact from '../Contact';
 
 
+const Parallaxor = () => {
 
-function Parallaxor() {
+    const edu_Ref = useRef();
+    const [onEduPage, setEduPageVisible] = useState(false);
+
+    useEffect(() => {
+        // console.log("Edu_Ref:", edu_Ref.current);
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            setEduPageVisible(entry.isIntersecting); 
+        })
+        
+        observer.observe(edu_Ref.current);
+      }, []);
+
+    console.log("onEduPage: ", onEduPage);
+
   return (
     <div className="app">    
         <div className="container"> {/* plx-wrp */}
+            <RotatingCircles onEduPage={onEduPage}/>
+
             <section className="content-section" id="about"> {/* plx-grp */}
-                <RotatingCircles />
+                
                 <div className="intro-layer">
                     <p className="tags">{'< >'} </p>
                         <div className="about-info">
@@ -35,33 +52,31 @@ function Parallaxor() {
                             {/* <button className="contact-btn">Contact Me</button> */}
                         </div>
                     <p className="tags">{'< / >'}</p>
-                </div>
-
-                <div className="base-layer">
-                    <SymbolCircle />
-                </div> 
+                </div>                
 
                 <div className="about-me-layer" id='about-me'>
                     <About />
-                </div>
-
-                <div className="mid-layer">
-                    <img src="src/assets/20240926-main.png" width={720}/>
-                </div>                                
+                </div>                      
 
             </section>
 
-            <section className="content-section" id="education">
-                
-                <div className="top-layer">
+            <div className={`mid-layer ${onEduPage ? "onEduPage": ""}`}>                    
+                <img src="src/assets/20240926-main.png" />                   
+            </div>  
+
+            <div className={`base-layer ${onEduPage ? "onEduPage": ""}`}>
+                <SymbolCircle />
+            </div> 
+
+
+            <section className="content-section" id="education">                
+                <div ref={edu_Ref} className="top-layer">
                     <p>Educational Background</p>                    
                 </div>
-
-                <Background />
-                
+                <Background />                
             </section>
 
-
+            
             <section className="content-section" id="skills">
                 
                 <div className="top-layer">

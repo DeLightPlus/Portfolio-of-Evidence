@@ -1,28 +1,39 @@
 /* Main container for positioning and 3D perspective */
 .atom-container {
-  position: relative;
-  top:14%;
-  left: 72%;
-  transform: translate(50%, 100%);
+  position: absolute;
+  top:20%;
+  left: 2%;
+  /* right:100%, */
+  transform: translate(0%, 0%);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: -1;
-  width: 120px;
-  height: 120px;
+  width: 250px;
+  height: 250px;
   perspective: 1000px; /* Adds 3D perspective */
   transform-style: preserve-3d; /* To preserve 3D transformations */
-  animation: rotateAtom 10s linear infinite; /* New animation for the whole atom */
+  animation: rotateAtom 7.5s linear infinite; 
+  transition: all 10s;
+
+}
+
+.atom-container.onEduPage
+{
+  top:24%;
+  left: 113%;
+
+  transition: all 5s;
 }
 
 .proton {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 8px;
+  height: 16px;
   border-radius: 50%;
-  background-color: rgb(0, 0, 0); /* A reddish color */
-  box-shadow: 0 0 30px rgba(255, 183, 170, 0.7), 0 0 60px rgba(255, 99, 71, 0.5); /* Glowing effect */
-  animation: pulseProton 2s infinite alternate, rotateProton 0.1s linear infinite; /* Pulsing + rotating animations */
+  background-color: rgb(214, 214, 214); /* A reddish color */
+  box-shadow: 0 0 30px rgba(96, 255, 255, 0.274), 0 0 60px rgba(90, 255, 255, 0.918); 
+  animation: pulseProton 2s infinite alternate, rotateProton 0.1s linear infinite; 
   z-index: 1; /* To place it above the orbits */
 }
 
@@ -39,38 +50,62 @@
 
 /* Outer Orbit */
 .orbit-outer {
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   
   border-radius: 50%;
   border-bottom: 10px solid cyan;
   border-top: 4px solid cyan;
   filter: drop-shadow(0 0 10px cyan);
-  animation: rotateOuter 4s linear infinite; /* Slower speed for depth effect */
+  animation: rotateOuter 800ms linear infinite; /* Slower speed for depth effect */
 }
 
 .orbit-middle {
-  width: 380px;
-  height: 380px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   border-bottom: 10px solid magenta;
   border-top: 10px solid magenta;
   filter: drop-shadow(0 0 10px magenta);
-  animation: rotateMiddle 1s linear infinite reverse;
+  animation: rotateMiddle 750ms linear infinite reverse;
   /* transform: rotateX(30deg); */
 }
 
 .orbit-inner {
-  width: 390px;
-  height: 390px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
   border-bottom: 10px solid greenyellow;
   border-top: 10px solid greenyellow;
   filter: drop-shadow(0 0 10px greenyellow);
-  animation: rotateInner 2s linear infinite;
+  animation: rotateInner 500ms linear infinite;
   /* transform: rotateX(20deg); */
 }
 
+
+.atom-container.onEduPage
+.orbit-outer {
+  width: 100px;
+  height: 100px;
+}
+
+.atom-container.onEduPage
+.orbit-middle {
+  width: 80px;
+  height: 80px;
+}
+
+.atom-container.onEduPage
+.orbit-inner {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border-bottom: 10px solid greenyellow;
+  border-top: 10px solid greenyellow;
+  filter: drop-shadow(0 0 10px greenyellow);
+  animation: rotateInner 500ms linear infinite;
+  /* transform: rotateX(20deg); */
+}
 
 
 /* Keyframes for orbit rotations */
@@ -142,10 +177,11 @@
 /* New animation for the whole atom rotation */
 @keyframes rotateAtom {
   0% {
-    transform: translate(25%, 100%) rotateY(0deg);
+    transform: translate(0%, 0%) rotateY(0deg);
   }
+  /* 50% {    transform: translate(0%, 10%) rotateY(0deg);  } */
   100% {
-    transform: translate(25%, 100%) rotateY(360deg);
+    transform: translate(0%, 0%) rotateY(360deg);
   }
 }
 

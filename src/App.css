@@ -85,20 +85,44 @@
   z-index: 1;
 }
 
-#about .base-layer
+.base-layer
 {
   position: absolute;
   inset: 0;
+  top:4%;
+  right: -8%;
   background: transparent;
+  transition: all 3s;
+}
+.base-layer.onEduPage
+{
+  top:-16%;
+  right: -92%;
+  transition: all 1.5s;
 }
 
-#about .mid-layer
+
+.mid-layer
 {
   position: absolute;
   /* inset: 0; */
   top: 4%;
   right: 16%;
+  /* right: -40%; */
   background: transparent;
+  z-index: 1;
+  transition: all 2s;
+
+}
+.mid-layer.onEduPage
+{
+  right: -40%;
+  transition: all 2s;
+}
+
+.mid-layer img
+{
+  width:860px
 }
 
 #about .about-info

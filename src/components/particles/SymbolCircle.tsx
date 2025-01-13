@@ -46,7 +46,7 @@ const generateSymbolPosition = (radius, totalSymbols, index) => {
 
 const SymbolCircle = () => {
   return (
-    <div className="circle-container">
+    <div className={`circle-container`}>
       {circles.map((circle, index) => {
         const { symbols, radius, rotationSpeed } = circle;
 
