@@ -1,12 +1,9 @@
 import "./App.css";
+import "./index.css"
 import { useState, useEffect } from 'react';
 
 import SplashScreen from "./components/SplashScreen/SplashScreen";
 import Portfolio from "./components/portfolio/Portfolio"
-
-
-import UserBlock from "./components/portfolio/userBlock/UserBlock";
-import Parallexor from "./components/portfolio/Parallaxor/Parallaxor";
 import ChatModal from "./components/SplashScreen/ChatModal";
 
 function App() 

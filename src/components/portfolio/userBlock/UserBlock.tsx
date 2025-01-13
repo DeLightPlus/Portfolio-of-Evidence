@@ -1,7 +1,7 @@
 import "./UserBlock.css";
 // import { user } from "/assets/react.svg"
 
-import React from 'react'
+
 
 function UserBlock() {
   return (

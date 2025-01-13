@@ -115,15 +115,13 @@ const Projects = () => {
           {/* Project Image Preview */}
           <div className="project-image">
             <img src="src/assets/screenshots/memorygame_Ss.PNG" alt="Memory Game Preview" className="project-preview-img" />
-          </div>       
-
-          
+          </div> 
 
           {/* Modal for Preview */}
           <div className={`game-modal ${!isOpen ? 'go-back' : ''}`}>
             <button onClick={toggleModal}> ◀ Close The Game</button>
             <iframe 
-              src="projects/memory-game/index.html" // Path to your HTML file in the public folder
+              src={"src/components/portfolio/Projects/memory-game/index.html"} // Path to your HTML file in the public folder
               width="100%"
               height="100%"
               title="Memory Game Preview"

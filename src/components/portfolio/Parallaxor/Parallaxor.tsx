@@ -1,5 +1,5 @@
 import "./Parallaxor.css";
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import SymbolCircle from '../../particles/SymbolCircle';
 import RotatingCircles from '../../particles/RotatingCircles';
 
@@ -10,6 +10,8 @@ import SkillsMatrix from '../Skills/SkillsMatrix';
 import WorkExperience from '../WorkExperience';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact';
+
+import myPic from "../../../assets/20240926-main.png"
 
 
 const Parallaxor = () => {
@@ -61,7 +63,7 @@ const Parallaxor = () => {
             </section>
 
             <div className={`mid-layer ${onEduPage ? "onEduPage": ""}`}>                    
-                <img src="src/assets/20240926-main.png" />                   
+                <img src={myPic} />                   
             </div>  
 
             <div className={`base-layer ${onEduPage ? "onEduPage": ""}`}>

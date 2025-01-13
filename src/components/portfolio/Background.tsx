@@ -1,4 +1,9 @@
-import React from 'react'
+import React from 'react';
+import hs from "../../assets/HwitiHS.png";
+import ul from "../../assets/UL-Green-alpha.png";
+import unisa from "../../assets/unisa-logo.png";
+import codetribe from "../../assets/mLab codetribe.png";
+
 
 const Background = () => {
   return (
@@ -6,7 +11,7 @@ const Background = () => {
         <div className="timeline-content" id="secondary">
             <p>Secondary Education:</p> 
             <div className='description-container'>
-                <img src='src/assets/HwitiHS.png' width={128} />                
+                <img src={hs} width={128} />                
                 <hr/> 
                 <div className='description-details'>
                     <b>Matriculation (Grade 12)</b>
@@ -27,7 +32,7 @@ const Background = () => {
             <ul>
                 <li>
                     <div className='description-container'>
-                        <img src='src/assets/UL-Green-alpha.png' width={128} />      
+                        <img src={ul} width={128} />      
                         <hr/>                  
                         <div className='description-details'>
                             <b>Degree in BSc (Mathematical Science)</b>
@@ -43,7 +48,7 @@ const Background = () => {
 
                 <li>
                     <div className='description-container'>
-                        <img src='src/assets/unisa-logo.png' height={48}/>
+                        <img src={unisa} height={48}/>
                         <hr/>
                         <div className='description-details'>
                             <p>Non-Degree Purpose</p>
@@ -62,7 +67,7 @@ const Background = () => {
             <p >Additional Education & Training: </p>
             <div className='description-container'>
                 <div>
-                    <img src='src/assets/mLab codetribe.png' width={256}/>   
+                    <img src={codetribe} width={256}/>   
                     <p><strong>CodeTribe Academy</strong></p>
                     <p>2024/2025 <span>(in progress)</span></p>
                     <p></p>                 
