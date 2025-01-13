@@ -1,7 +1,11 @@
-import React from 'react';
+
 import './RotatingCircles.css';
 
-const RotatingCircles = ({onEduPage}) => {
+interface RotatingCirclesProps {
+  onEduPage: boolean; // Assuming onEduPage is a function with no arguments and no return value
+}
+
+const RotatingCircles: React.FC<RotatingCirclesProps> = ({onEduPage}) => {
   return (
     <div className={`atom-container ${onEduPage ? "onEduPage": ""}`}>
 
