@@ -1,12 +1,21 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./SplashScreen.css";
 
-const SplashScreen = ({ onFinish }) => {
-  const bottomRef = useRef(null); // Ref for auto-scrolling
-  const tableOfContentsRef = useRef(null); // Reference to Table of Contents
-  const [messages, setMessages] = useState([]);
-  const [userInput, setUserInput] = useState("");
-  const [isComplete, setIsComplete] = useState(false);
+interface SplashScreenProps {
+  onFinish: () => void;
+}
+
+interface Message {
+  text: string;
+  from: string;
+}
+
+const SplashScreen: React.FC<SplashScreenProps>  = ({ onFinish }) => {
+
+  const tableOfContentsRef = useRef<HTMLDivElement>(null); // Reference to Table of Contents
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [userInput, setUserInput] = useState<string>("");
+  const [isComplete, setIsComplete] = useState<boolean>(false);
   const [typingMessage, setTypingMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [countdown, setCountdown] = useState(30); // Countdown for progress bar
@@ -36,7 +45,8 @@ const SplashScreen = ({ onFinish }) => {
   // Scroll event listener to detect when user has scrolled to the Table of Contents
   useEffect(() => {
     const handleScroll = () => {
-      if (tableOfContentsRef.current) {
+      if (tableOfContentsRef.current) 
+      {
         const tablePosition = tableOfContentsRef.current.getBoundingClientRect();
         if (tablePosition.bottom <= window.innerHeight) {
           setShowConversation(true); // Start conversation when Table of Contents is in view
@@ -55,18 +65,20 @@ const SplashScreen = ({ onFinish }) => {
   useEffect(() => {
     loadSavedMessages();
 
-    if (!localStorage.getItem("firstMessageShown") && !localStorage.getItem("session_complete")) {
+    if (!localStorage.getItem("firstMessageShown") && !localStorage.getItem("session_complete")) 
+    {
       initFirstMessage();
-    } else if (localStorage.getItem("firstMessageShown") && localStorage.getItem("userName") && !localStorage.getItem("session_complete")) {
+    } 
+    else if (localStorage.getItem("firstMessageShown") && localStorage.getItem("userName") && !localStorage.getItem("session_complete")) 
+    {
       const storedUserName = localStorage.getItem("userName");
-      setUserName(storedUserName); // Set the stored user name from localStorage
+      setUserName(storedUserName || ""); // Set the stored user name from localStorage
 
       setTimeout(() => {
         typeText(`Hey, Is that you, ${storedUserName}?`);
       }, 500);
-    } else {
-      setIsComplete(true); // Session is complete if user has finished all questions
-    }
+    } 
+    else { setIsComplete(true);  }
 
     setShowConversation(false);
   }, []);
@@ -85,7 +97,7 @@ const SplashScreen = ({ onFinish }) => {
 
   // Load saved messages from localStorage
   const loadSavedMessages = () => {
-    const savedMessages = JSON.parse(localStorage.getItem("chatMessages")) || [];
+    const savedMessages = JSON.parse(localStorage.getItem("chatMessages")  || "[]" );
     setMessages(savedMessages);
   };
 
@@ -96,7 +108,8 @@ const SplashScreen = ({ onFinish }) => {
   };
 
   // Simulate typing effect for messages
-  const typeText = (text) => {
+  const typeText = (text: string) =>
+  {
     setIsTyping(true);
     let index = 0;
     setTypingMessage("");
@@ -105,7 +118,9 @@ const SplashScreen = ({ onFinish }) => {
       if (index < text.length) {
         setTypingMessage((prev) => prev + text.charAt(index));
         index++;
-      } else {
+      } 
+      else
+      {
         clearInterval(interval);
         setMessages((prev) => [...prev, { text, from: "DLP" }]);
         setTypingMessage("");
@@ -115,7 +130,7 @@ const SplashScreen = ({ onFinish }) => {
   };
 
   // Handle user input and trigger next message
-  const handleUserInput = (e) => {
+  const handleUserInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && userInput.trim() && !isTyping) {
       setMessages((prev) => [...prev, { text: userInput, from: "User" }]);
       const trimmedInput = userInput.trim();
@@ -253,7 +268,7 @@ const SplashScreen = ({ onFinish }) => {
             <span className="cursor">|</span>
           </p>
         )}
-        <div ref={bottomRef} />
+        {/* <div ref={bottomRef} /> */}
       </div>
 
       {/* User Input Box */}
