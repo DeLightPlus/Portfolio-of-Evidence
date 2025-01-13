@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import SymbolCircle from '../../particles/SymbolCircle';
 import RotatingCircles from '../../particles/RotatingCircles';
 
-
 import About from '../About';
 import Background from '../Background'; //Educational-Background
 import SkillsMatrix from '../Skills/SkillsMatrix';
@@ -16,7 +15,7 @@ import myPic from "../../../assets/20240926-main.png"
 
 const Parallaxor = () => {
 
-    const edu_Ref = useRef();
+    const edu_Ref = useRef<HTMLDivElement>(null);
     const [onEduPage, setEduPageVisible] = useState(false);
 
     useEffect(() => {
@@ -26,7 +25,10 @@ const Parallaxor = () => {
             setEduPageVisible(entry.isIntersecting); 
         })
         
-        observer.observe(edu_Ref.current);
+        if (edu_Ref.current) 
+        {
+            observer.observe(edu_Ref.current);
+        }
       }, []);
 
     console.log("onEduPage: ", onEduPage);

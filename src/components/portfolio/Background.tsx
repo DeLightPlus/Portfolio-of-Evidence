@@ -1,4 +1,4 @@
-import React from 'react';
+
 import hs from "../../assets/HwitiHS.png";
 import ul from "../../assets/UL-Green-alpha.png";
 import unisa from "../../assets/unisa-logo.png";
