@@ -1,10 +1,9 @@
 import "./sidebar.css"  
 import {
     FaLinkedinIn,
-    FaFacebookF,
     FaInstagram,
     FaGithub,
-    GiGamepad
+  
   } from '../../../utils/icons';
 import { useState } from "react";
    
