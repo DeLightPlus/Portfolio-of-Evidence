@@ -1,4 +1,6 @@
 // src/SymbolCircle.js
+import React from 'react';
+
 import './SymbolCircle.css';
 
 const circles = [
@@ -35,7 +37,7 @@ const circles = [
 ];
 
 // Function to calculate the position of each symbol in a uniform circular arrangement
-const generateSymbolPosition = (radius: number, totalSymbols: number, index: number) => {
+const generateSymbolPosition = (radius, totalSymbols, index) => {
   // Calculate the angle between each symbol
   const angle = (index / totalSymbols) * 2 * Math.PI;
   const x = radius * Math.cos(angle);

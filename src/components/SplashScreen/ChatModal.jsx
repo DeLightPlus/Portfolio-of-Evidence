@@ -1,12 +1,6 @@
 import SplashScreen from './SplashScreen';
 
-interface ChatModalProps {
-  chatMaximized: boolean;
-  handleChatMaximize: () => void;
-  handleChatToggle: () => void;
-  handleChatRestore: () => void;
-}
-const ChatModal: React.FC<ChatModalProps> = ({ chatMaximized, handleChatMaximize, handleChatToggle, handleChatRestore }) => {
+const ChatModal = ({ chatMaximized, handleChatMaximize, handleChatToggle, handleChatRestore }) => {
   return (
     <div className={ `chat-modal ${ chatMaximized ? "maximized" : "restored" }`} > 
       <div className="chat-modal-content">

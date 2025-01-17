@@ -1,4 +1,6 @@
 // Portfolio.jsx
+import React from 'react';
+
 import Parallaxor from './Parallaxor/Parallaxor';
 import './Portfolio.css';
 import SideBar from './sidebar/sidebar';

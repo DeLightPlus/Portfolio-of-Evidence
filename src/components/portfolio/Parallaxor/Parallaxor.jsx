@@ -1,5 +1,5 @@
 import "./Parallaxor.css";
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import SymbolCircle from '../../particles/SymbolCircle';
 import RotatingCircles from '../../particles/RotatingCircles';
 
@@ -15,7 +15,7 @@ import myPic from "../../../assets/20240926-main.png"
 
 const Parallaxor = () => {
 
-    const edu_Ref = useRef<HTMLDivElement>(null);
+    const edu_Ref = useRef(null);
     const [onEduPage, setEduPageVisible] = useState(false);
 
     useEffect(() => {

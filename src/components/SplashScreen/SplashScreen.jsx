@@ -1,21 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import "./SplashScreen.css";
 
-interface SplashScreenProps {
-  onFinish: () => void;
-}
 
-interface Message {
-  text: string;
-  from: string;
-}
 
-const SplashScreen: React.FC<SplashScreenProps>  = ({ onFinish }) => {
+const SplashScreen  = ({ onFinish }) => {
 
-  const tableOfContentsRef = useRef<HTMLDivElement>(null); // Reference to Table of Contents
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [userInput, setUserInput] = useState<string>("");
-  const [isComplete, setIsComplete] = useState<boolean>(false);
+  const tableOfContentsRef = useRef(null); // Reference to Table of Contents
+  const [messages, setMessages] = useState([]);
+  const [userInput, setUserInput] = useState("");
+  const [isComplete, setIsComplete] = useState(false);
   const [typingMessage, setTypingMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [countdown, setCountdown] = useState(30); // Countdown for progress bar
@@ -108,7 +101,7 @@ const SplashScreen: React.FC<SplashScreenProps>  = ({ onFinish }) => {
   };
 
   // Simulate typing effect for messages
-  const typeText = (text: string) =>
+  const typeText = (text) =>
   {
     setIsTyping(true);
     let index = 0;
@@ -130,7 +123,7 @@ const SplashScreen: React.FC<SplashScreenProps>  = ({ onFinish }) => {
   };
 
   // Handle user input and trigger next message
-  const handleUserInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleUserInput = (e) => {
     if (e.key === "Enter" && userInput.trim() && !isTyping) {
       setMessages((prev) => [...prev, { text: userInput, from: "User" }]);
       const trimmedInput = userInput.trim();

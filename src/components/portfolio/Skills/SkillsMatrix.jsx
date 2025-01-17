@@ -1,4 +1,4 @@
-
+import React from 'react';
 import './SkillsMatrix.css';
 
 const skills = [
@@ -99,7 +99,7 @@ const skills = [
   },
 ];
 
-const getProficiencyWidth = (proficiency: string) => {
+const getProficiencyWidth = (proficiency) => {
   switch (proficiency.toLowerCase()) {
     case 'beginner':
       return 33;

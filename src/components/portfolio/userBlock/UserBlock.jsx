@@ -1,3 +1,4 @@
+import React from 'react';
 import "./UserBlock.css";
 // import { user } from "/assets/react.svg"
 

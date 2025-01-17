@@ -1,10 +1,12 @@
 import "./sidebar.css"  
+import React from 'react';
+
 import {
     FaLinkedinIn,
     FaInstagram,
-    FaGithub,
-  
+    FaGithub,  
   } from '../../../utils/icons';
+  
 import { useState } from "react";
    
    const SideBar = () => 
