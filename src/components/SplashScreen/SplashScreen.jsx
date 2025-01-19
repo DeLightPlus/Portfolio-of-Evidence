@@ -210,7 +210,7 @@ const SplashScreen  = ({ onFinish }) => {
       )}
 
       <div className="welcome-header">
-        <h3>{isComplete ? "" : "Welcome to"}</h3>
+        <h3>Welcome to <strong><u>De_Light_plus</u></strong> chat</h3>
         <div className="logo-section">
           <p>*******************************************************</p>
           <h1>K.P Matlakala</h1>
@@ -225,7 +225,7 @@ const SplashScreen  = ({ onFinish }) => {
             <li><strong>Full Name:</strong> Kabelo Peter Matlakala</li>
             <li><strong>CodeTribe Location:</strong> Limpopo, Polokwane</li>
             <li><strong>Program Enrolled:</strong> Web and Mobile Development</li>
-            <li><strong>Contact Information:</strong>
+            <li><strong><u>Contact Information:</u></strong>
               <ul>
                 <li>Email: <a href="mailto:matlakalakabelo1@gmail.com">matlakalakabelo1@gmail.com</a></li>
                 <li>Linkedin: <a href="https://linkedin.com/in/kabelo-matlakala">kabelo-matlakala</a></li>

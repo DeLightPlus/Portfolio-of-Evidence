@@ -43,14 +43,14 @@ const Parallaxor = () => {
                 <div className="intro-layer">
                     <p className="tags">{'< >'} </p>
                         <div className="about-info">
-                            <h1><span>H</span>i there</h1>
-                            <h2 className="name">Name's 
+                            <h1><span>H</span>ello</h1>
+                            <h2 className="name">I'm
                                 <span className="shadow-text">P</span>
                                 <span className="highlight-text">P</span>eter,
                             </h2>
                             <div className="smry">
                                 <h3>Junior Web Developer</h3>
-                                <p>Front-End | Back-End Developer</p>
+                                <p>Specializing in Front-End & Back-End Development</p>
                             </div>
                             
                             {/* <button className="contact-btn">Contact Me</button> */}

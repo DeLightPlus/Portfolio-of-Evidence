@@ -12,7 +12,6 @@ function App()
   const [chatMinimized, setChatMinimized] = useState(true);
   const [chatMaximized, setChatMaximized] = useState(false);
 
-
   if(localStorage.getItem("firstMessageShown") && !localStorage.getItem("userName"))
   {
       localStorage.clear();

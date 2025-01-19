@@ -1,14 +1,14 @@
 // Portfolio.jsx
-import React from 'react';
+import './Portfolio.css';
 
 import Parallaxor from './Parallaxor/Parallaxor';
-import './Portfolio.css';
+
 import SideBar from './sidebar/sidebar';
 import UserBlock from './userBlock/UserBlock';
+import TechStack from "./Skills/TechStacks/TechStack.jsx";
 
 const Portfolio = () => {
 
-  
   return (
     <>
       {/* Profile Icon @top-right-corner */}
@@ -17,6 +17,7 @@ const Portfolio = () => {
       <SideBar />
 
       <Parallaxor />
+      <TechStack />
           
     </>
   );

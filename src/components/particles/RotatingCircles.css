@@ -1,7 +1,7 @@
 /* Main container for positioning and 3D perspective */
 .atom-container {
   position: absolute;
-  top:20%;
+  top:56%;
   left: 2%;
   /* right:100%, */
   transform: translate(0%, 0%);
@@ -21,7 +21,7 @@
 .atom-container.onEduPage
 {
   top:24%;
-  left: 113%;
+  left: 118%;
 
   transition: all 5s;
 }

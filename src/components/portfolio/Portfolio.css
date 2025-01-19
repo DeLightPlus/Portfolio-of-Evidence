@@ -33,6 +33,8 @@
 #about 
 {
   background-color: transparent;
+  margin-top: 48px;
+  text-align: justify;
 }
 
 @keyframes about_appears
@@ -52,8 +54,10 @@
   animation: about_appears 2s linear
 }
 
-#education {
+#education
+{
   background-color: transparent;
+
 }
 
 #education #additional-training p
